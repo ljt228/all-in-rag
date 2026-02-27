@@ -1,6 +1,7 @@
 import os
 # hugging face镜像设置，如果国内环境无法使用启用该设置
-# os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
 from dotenv import load_dotenv
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -52,7 +53,7 @@ llm = ChatOpenAI(
     model="glm-4.7-flash-free",
     temperature=0.7,
     max_tokens=4096,
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
+    api_key=os.getenv("AIHUBMIX_API_KEY"),
     base_url="https://aihubmix.com/v1"
 )
 
